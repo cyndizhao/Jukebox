@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>PlaySong</title>
+    <script type="text/javascript" src="player.js"></script>
+    <script type="text/javascript" src="jukebox.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+          let input = window.prompt("Please enter a song string:");
+          let preferSong = parseSong(input);
+
+          const onFinish = function () {
+            window.alert("Song finished playing");
+            let input = window.prompt("Please enter a song string:");
+            let preferSong = parseSong(input);
+            playSong(preferSong, 400, onFinish);
+          }
+
+          playSong(preferSong, 400, onFinish);
+
+  });
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
